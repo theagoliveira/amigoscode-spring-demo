@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "56b44411-77a9-496c-b3b5-12df1016289c",
+		"name": "amigoscode-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://fast-reaches-65809.herokuapp.com/api/v1/student",
+					"protocol": "https",
+					"host": [
+						"fast-reaches-65809",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Student (3)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test A\",\n    \"email\": \"testa@testa.com\",\n    \"dob\": \"1500-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fast-reaches-65809.herokuapp.com/api/v1/student",
+					"protocol": "https",
+					"host": [
+						"fast-reaches-65809",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Student (4)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Test B\",\n    \"email\": \"testb@testb.com\",\n    \"dob\": \"1234-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fast-reaches-65809.herokuapp.com/api/v1/student",
+					"protocol": "https",
+					"host": [
+						"fast-reaches-65809",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student (3)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://fast-reaches-65809.herokuapp.com/api/v1/student/a5b5be4d-1abf-4b3d-987b-9f0ad606b8d4",
+					"protocol": "https",
+					"host": [
+						"fast-reaches-65809",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student",
+						"a5b5be4d-1abf-4b3d-987b-9f0ad606b8d4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student (4)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://fast-reaches-65809.herokuapp.com/api/v1/student/02e7fcf6-bf5f-460c-8eb3-09f7083a45b6?name=Example&email=example@example.com",
+					"protocol": "https",
+					"host": [
+						"fast-reaches-65809",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"student",
+						"02e7fcf6-bf5f-460c-8eb3-09f7083a45b6"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Example"
+						},
+						{
+							"key": "email",
+							"value": "example@example.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
