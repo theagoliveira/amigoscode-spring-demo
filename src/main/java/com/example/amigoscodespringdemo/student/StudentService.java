@@ -1,15 +1,18 @@
 package com.example.amigoscodespringdemo.student;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
+
     private final StudentRepository studentRepository;
 
     @Autowired
@@ -30,7 +33,7 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public void deleteStudent(Long studentId) {
+    public void deleteStudent(UUID studentId) {
         boolean exists = studentRepository.existsById(studentId);
         if (!exists) {
             throw new IllegalStateException("Student with ID " + studentId + " does not exist.");
@@ -40,7 +43,7 @@ public class StudentService {
     }
 
     @Transactional
-    public void updateStudent(Long studentId, String name, String email) {
+    public void updateStudent(UUID studentId, String name, String email) {
         Optional<Student> optStudent = studentRepository.findById(studentId);
         if (optStudent.isEmpty()) {
             throw new IllegalStateException("Student with ID " + studentId + " does not exist.");
@@ -60,4 +63,5 @@ public class StudentService {
             student.setEmail(email);
         }
     }
+
 }
