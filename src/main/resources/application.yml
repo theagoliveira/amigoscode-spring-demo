@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/student
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        '[format_sql]': true
+  cache:
+    jcache:
+      config: classpath:ehcache.xml
+
+server:
+  error:
+    include-message: always
+
+logging:
+  level:
+    '[com.example]': debug
+
+bucket4j:
+  enabled: true
+  filters:
+  - cache-name: buckets
+    url: .*
+    rate-limits:
+    - bandwidths:
+      - capacity: 5
+        time: 10
+        unit: seconds
